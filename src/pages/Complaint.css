@@ -217,7 +217,7 @@
     }
 
     .complaints-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 8px;
         padding: 8px;
         padding-bottom: 30px;
@@ -234,7 +234,7 @@
         padding-bottom: 12px;
         border-radius: 16px;
     }
-    
+
     .complaint-label-hindi {
         font-size: 10px;
     }
@@ -249,6 +249,20 @@
     .complaint-label {
         font-size: 11px;
         padding: 0 4px;
+    }
+
+    /* Disable nested scrolling, let main container scroll */
+    .complaint-container {
+        height: auto;
+        min-height: 100%;
+        overflow: visible;
+    }
+
+    .complaints-grid {
+        height: auto;
+        overflow: visible;
+        padding-bottom: 80px;
+        /* Add extra breathing room at bottom */
     }
 }
 
@@ -280,10 +294,11 @@
     }
 
     .complaints-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
         padding: 8px;
         width: 100%;
+        justify-items: center;
     }
 
     .complaint-card {
@@ -295,7 +310,7 @@
         padding-top: 18px;
         padding-bottom: 14px;
     }
-    
+
     .complaint-label-hindi {
         font-size: 11px;
     }
@@ -329,14 +344,14 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
     }
-    
+
     .complaint-card {
         width: 100%;
         max-width: 100%;
         min-height: 220px;
         height: auto;
     }
-    
+
     .complaint-label-hindi {
         font-size: 13px;
     }
@@ -353,7 +368,7 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 18px;
     }
-    
+
     .complaint-card {
         width: 100%;
         max-width: 100%;
@@ -367,7 +382,7 @@
         gap: 20px;
         justify-content: center;
     }
-    
+
     .complaint-card {
         width: 100%;
         max-width: 200px;
@@ -377,24 +392,38 @@
 /* Portrait Orientation - Narrow Screens */
 @media (orientation: portrait) and (max-width: 768px) {
     .complaints-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         width: 100%;
+        gap: 12px;
     }
-    
+
     .complaint-card {
         width: 100%;
         max-width: 100%;
+    }
+
+    /* Disable nested scrolling */
+    .complaint-container {
+        height: auto;
+        min-height: 100%;
+    }
+
+    .complaints-grid {
+        height: auto;
+        overflow: visible;
+        padding-bottom: 80px;
     }
 }
 
 /* Narrow Screens - 3 Cards Per Row */
 @media (max-width: 600px) {
     .complaints-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         width: 100%;
         padding: 10px 5px;
+        gap: 12px;
     }
-    
+
     .complaint-card {
         width: 100%;
         max-width: 100%;
@@ -403,6 +432,18 @@
         padding: 12px 6px;
         padding-top: 14px;
         padding-bottom: 10px;
+    }
+
+    /* Disable nested scrolling */
+    .complaint-container {
+        height: auto;
+        min-height: 100%;
+    }
+
+    .complaints-grid {
+        height: auto;
+        overflow: visible;
+        padding-bottom: 80px;
     }
 }
 
@@ -467,6 +508,7 @@
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
+
     .complaint-card,
     .complaint-icon-img {
         transition: none;

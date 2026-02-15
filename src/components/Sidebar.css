@@ -14,7 +14,9 @@
     align-items: center;
     padding: 20px 10px;
     gap: 20px;
-    z-index: 999;
+    gap: 20px;
+    z-index: 1200;
+    box-sizing: border-box;
     box-sizing: border-box;
     overflow-y: auto;
     overflow-x: hidden;
@@ -290,5 +292,109 @@
 
     .sidebar-icon:hover {
         transform: none;
+    }
+}
+
+/* ============================================
+   COLLAPSIBLE SIDEBAR STYLES
+   ============================================ */
+
+.sidebar {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* When sidebar is closed on non-home pages */
+.sidebar-closed {
+    transform: translateX(-100%);
+    pointer-events: none;
+    /* Prevent clicks when hidden */
+    background: transparent;
+    border: none;
+}
+
+/* When sidebar is open on non-home pages */
+.sidebar-open {
+    transform: translateX(0);
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+    background-color: rgba(234, 234, 162, 0.95);
+    /* Matches theme bg with opacity */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Toggle Button (Arrow Right) */
+.sidebar-toggle-btn {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 1201;
+    width: 36px;
+    width: 36px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: none;
+    border-radius: 0 12px 12px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.sidebar-toggle-btn:hover {
+    background: #fff;
+    width: 42px;
+    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.2);
+    /* Make the arrow move a bit */
+}
+
+/* Close Button (inside sidebar) */
+.sidebar-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* Position at top-right of sidebar */
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 1202;
+    /* Above sidebar content */
+}
+
+.sidebar-close-btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: scale(1.1);
+}
+
+/* Backdrop */
+.sidebar-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: 1199;
+    /* Below sidebar (1200) but above content */
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
     }
 }

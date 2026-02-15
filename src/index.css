@@ -41,48 +41,53 @@ body {
   background-image:
     radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 0.05) 0px, transparent 50%),
     radial-gradient(at 100% 100%, hsla(225, 39%, 30%, 0.05) 0px, transparent 50%);
-  margin-left: 140px;
+  margin-left: 0;
   box-sizing: border-box;
+  transition: margin-left 0.3s ease;
+}
+
+.app-shell.layout-home {
+  margin-left: 140px;
 }
 
 /* Desktop (1024px and above) - Full sidebar */
 @media (min-width: 1024px) {
-  .app-shell {
+  .app-shell.layout-home {
     margin-left: 140px;
   }
 }
 
 /* Very Large Screens (1440px and above) */
 @media (min-width: 1440px) {
-  .app-shell {
+  .app-shell.layout-home {
     margin-left: 150px;
   }
 }
 
 /* Tablet Landscape (769px - 1023px) */
 @media (min-width: 769px) and (max-width: 1023px) {
-  .app-shell {
+  .app-shell.layout-home {
     margin-left: 125px;
   }
 }
 
 /* Tablet Portrait (481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
-  .app-shell {
+  .app-shell.layout-home {
     margin-left: 115px;
   }
 }
 
 /* Mobile Large (360px - 480px) */
 @media (min-width: 360px) and (max-width: 480px) {
-  .app-shell {
+  .app-shell.layout-home {
     margin-left: 100px;
   }
 }
 
 /* Mobile Small (< 360px) */
 @media (max-width: 359px) {
-  .app-shell {
+  .app-shell.layout-home {
     margin-left: 90px;
   }
 }

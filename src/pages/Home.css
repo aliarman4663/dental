@@ -23,15 +23,34 @@
     flex-shrink: 0;
 }
 
+.branding-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.rungta-group-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: white;
+    padding: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
 .college-name {
     font-size: 32px;
     font-weight: 700;
     color: #11181C;
-    text-align: center;
-    margin: 0 0 40px 0;
+    text-align: left;
+    /* Align left relative to the container for better pairing with logo */
+    margin: 0;
     letter-spacing: 0.5px;
     line-height: 1.3;
-    padding-top: 20px;
 }
 
 .logo-container {
@@ -143,10 +162,21 @@
         margin-bottom: 20px;
     }
 
+    .branding-container {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .rungta-group-logo {
+        width: 40px;
+        height: 40px;
+    }
+
     .college-name {
         font-size: 16px;
-        margin-bottom: 20px;
-        padding-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
     }
 
     .college-logo {
@@ -377,6 +407,7 @@
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
+
     .desktop-icon,
     .app-icon {
         transition: none;
