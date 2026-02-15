@@ -1,0 +1,373 @@
+.registration-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #eaeaa2;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    min-height: 0;
+}
+
+.reg-content {
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+.title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #000000;
+    line-height: 1.2;
+}
+
+.subtitle {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 1.4;
+    opacity: 0.8;
+}
+
+.reg-card {
+    padding: 40px;
+    border-radius: 24px;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-sizing: border-box;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-field {
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid #d7dbdf;
+    background-color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    font-family: inherit;
+    color: #000000;
+    transition: all 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-field::placeholder {
+    color: #999999;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #0070F3;
+    box-shadow: 0 0 0 4px rgba(0, 112, 243, 0.1);
+    background-color: white;
+    color: #000000;
+}
+
+.input-field.error {
+    border-color: #dc2626;
+    background-color: #fef2f2;
+}
+
+.input-field.error:focus {
+    border-color: #dc2626;
+    box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
+}
+
+.error-message {
+    color: #dc2626;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 4px;
+    display: block;
+}
+
+.gender-row {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.gender-btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #d7dbdf;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 500;
+    color: #000000;
+    transition: all 0.2s;
+    min-height: 44px;
+    box-sizing: border-box;
+}
+
+.gender-btn:hover {
+    background-color: #f1f3f5;
+    border-color: #c1c8cd;
+}
+
+.gender-btn.active {
+    background-color: #0b1d33;
+    color: white;
+    border-color: #0b1d33;
+}
+
+.submit-btn {
+    margin-top: 12px;
+    padding: 16px;
+    border-radius: 12px;
+    border: none;
+    background-color: #0b1d33;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s, background-color 0.2s;
+    width: 100%;
+    min-height: 48px;
+    box-sizing: border-box;
+}
+
+.submit-btn:hover {
+    background-color: #1a2e47;
+    transform: translateY(-1px);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - REGISTRATION PAGE
+   ============================================ */
+
+/* Extra Small Devices (< 360px) */
+@media (max-width: 359px) {
+    .registration-container {
+        padding: 12px 8px;
+        align-items: flex-start;
+    }
+
+    .reg-content {
+        max-width: 100%;
+    }
+
+    .title {
+        font-size: 22px;
+        margin-bottom: 6px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        margin-bottom: 24px;
+    }
+
+    .reg-card {
+        padding: 20px 16px;
+        border-radius: 16px;
+        gap: 18px;
+    }
+
+    .input-group label {
+        font-size: 12px;
+    }
+
+    .input-field {
+        padding: 12px 14px;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+
+    .gender-row {
+        gap: 8px;
+    }
+
+    .gender-btn {
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 10px;
+        min-height: 40px;
+    }
+
+    .submit-btn {
+        padding: 14px;
+        font-size: 15px;
+        border-radius: 10px;
+        min-height: 44px;
+    }
+}
+
+/* Small Devices (360px - 480px) */
+@media (min-width: 360px) and (max-width: 480px) {
+    .registration-container {
+        padding: 16px 10px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        margin-bottom: 28px;
+    }
+
+    .reg-card {
+        padding: 24px 18px;
+        border-radius: 20px;
+        gap: 20px;
+    }
+
+    .input-group label {
+        font-size: 13px;
+    }
+
+    .input-field {
+        padding: 12px 14px;
+        font-size: 15px;
+    }
+
+    .gender-btn {
+        padding: 11px;
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        padding: 15px;
+        font-size: 15px;
+    }
+}
+
+/* Medium Devices (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .registration-container {
+        padding: 18px 14px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .reg-card {
+        padding: 32px 24px;
+        border-radius: 22px;
+    }
+}
+
+/* Large Devices (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .reg-card {
+        padding: 36px 32px;
+    }
+}
+
+/* Landscape Orientation - Small Screens */
+@media (orientation: landscape) and (max-height: 600px) {
+    .registration-container {
+        padding: 12px;
+        align-items: flex-start;
+    }
+
+    .title {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+        margin-bottom: 16px;
+    }
+
+    .reg-card {
+        padding: 16px;
+        gap: 14px;
+    }
+
+    .input-group {
+        gap: 6px;
+    }
+
+    .input-field {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .gender-btn {
+        padding: 8px;
+        font-size: 13px;
+        min-height: 36px;
+    }
+
+    .submit-btn {
+        padding: 12px;
+        font-size: 14px;
+        min-height: 40px;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .submit-btn:hover {
+        transform: none;
+    }
+
+    .submit-btn:active {
+        transform: scale(0.98);
+    }
+
+    .gender-btn:hover {
+        background-color: transparent;
+    }
+
+    .gender-btn:active {
+        background-color: #f1f3f5;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .input-field,
+    .gender-btn,
+    .submit-btn {
+        transition: none;
+    }
+
+    .submit-btn:hover {
+        transform: none;
+    }
+}

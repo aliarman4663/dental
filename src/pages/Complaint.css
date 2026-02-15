@@ -1,0 +1,482 @@
+.complaint-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #eaeaa2;
+    min-height: 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.complaint-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    color: #475569;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+}
+
+.back-button:active {
+    transform: scale(0.95);
+}
+
+.header-content {
+    flex: 1;
+    text-align: center;
+}
+
+.header-spacer {
+    width: 40px;
+    flex-shrink: 0;
+}
+
+.page-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #11181C;
+    line-height: 1.2;
+}
+
+.page-subtitle {
+    font-size: 16px;
+    color: #687076;
+    line-height: 1.4;
+}
+
+.complaints-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    justify-items: center;
+}
+
+@media (min-height: 800px) {
+    .complaints-grid {
+        align-content: center;
+    }
+}
+
+.complaint-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 16px;
+    padding-top: 20px;
+    padding-bottom: 16px;
+    min-height: 220px;
+    height: auto;
+    width: 100%;
+    max-width: 200px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.2s;
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+.complaint-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.complaint-card:active {
+    transform: scale(0.98);
+}
+
+.glass-panel-sm {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.icon-container {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 3px solid white;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.complaint-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.complaint-card:hover .complaint-icon-img {
+    transform: scale(1.1);
+}
+
+.complaint-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #11181C;
+    text-align: center;
+    padding: 0 8px;
+    word-break: break-word;
+    line-height: 1.3;
+    margin-bottom: 6px;
+    margin-top: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.complaint-label-hindi {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+    text-align: center;
+    padding: 0 8px;
+    word-break: break-word;
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - COMPLAINT/POSTOP PAGE
+   ============================================ */
+
+/* Extra Small Devices (< 360px) */
+@media (max-width: 359px) {
+    .complaint-container {
+        padding: 12px 8px;
+    }
+
+    .complaint-header {
+        margin-bottom: 16px;
+        padding: 0 5px;
+    }
+
+    .back-button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .header-spacer {
+        width: 36px;
+    }
+
+    .page-title {
+        font-size: 22px;
+        margin-bottom: 6px;
+    }
+
+    .page-subtitle {
+        font-size: 13px;
+    }
+
+    .complaints-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        padding: 8px;
+        padding-bottom: 30px;
+        width: 100%;
+    }
+
+    .complaint-card {
+        width: 100%;
+        max-width: 100%;
+        min-height: 200px;
+        height: auto;
+        padding: 14px 8px;
+        padding-top: 16px;
+        padding-bottom: 12px;
+        border-radius: 16px;
+    }
+    
+    .complaint-label-hindi {
+        font-size: 10px;
+    }
+
+    .icon-container {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+        border: 2px solid white;
+    }
+
+    .complaint-label {
+        font-size: 11px;
+        padding: 0 4px;
+    }
+}
+
+/* Small Devices (360px - 480px) */
+@media (min-width: 360px) and (max-width: 480px) {
+    .complaint-container {
+        padding: 16px 10px;
+    }
+
+    .complaint-header {
+        padding: 0 8px;
+    }
+
+    .back-button {
+        width: 38px;
+        height: 38px;
+    }
+
+    .header-spacer {
+        width: 38px;
+    }
+
+    .page-title {
+        font-size: 24px;
+    }
+
+    .page-subtitle {
+        font-size: 14px;
+    }
+
+    .complaints-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 8px;
+        width: 100%;
+    }
+
+    .complaint-card {
+        width: 100%;
+        max-width: 100%;
+        min-height: 210px;
+        height: auto;
+        padding: 16px 10px;
+        padding-top: 18px;
+        padding-bottom: 14px;
+    }
+    
+    .complaint-label-hindi {
+        font-size: 11px;
+    }
+
+    .icon-container {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 12px;
+    }
+
+    .complaint-label {
+        font-size: 12px;
+    }
+}
+
+/* Medium Devices (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .complaint-container {
+        padding: 18px 14px;
+    }
+
+    .page-title {
+        font-size: 28px;
+    }
+
+    .page-subtitle {
+        font-size: 15px;
+    }
+
+    .complaints-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    
+    .complaint-card {
+        width: 100%;
+        max-width: 100%;
+        min-height: 220px;
+        height: auto;
+    }
+    
+    .complaint-label-hindi {
+        font-size: 13px;
+    }
+
+    .icon-container {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+/* Large Devices (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .complaints-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+    
+    .complaint-card {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Extra Large Devices (> 1024px) - Full Screen Row Layout */
+@media (min-width: 1025px) {
+    .complaints-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 20px;
+        justify-content: center;
+    }
+    
+    .complaint-card {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* Portrait Orientation - Narrow Screens */
+@media (orientation: portrait) and (max-width: 768px) {
+    .complaints-grid {
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+    }
+    
+    .complaint-card {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Narrow Screens - 3 Cards Per Row */
+@media (max-width: 600px) {
+    .complaints-grid {
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        padding: 10px 5px;
+    }
+    
+    .complaint-card {
+        width: 100%;
+        max-width: 100%;
+        min-height: 180px;
+        height: auto;
+        padding: 12px 6px;
+        padding-top: 14px;
+        padding-bottom: 10px;
+    }
+}
+
+/* Landscape Orientation - Small Screens */
+@media (orientation: landscape) and (max-height: 600px) {
+    .complaint-container {
+        padding: 12px;
+    }
+
+    .complaint-header {
+        margin-bottom: 12px;
+    }
+
+    .page-title {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .page-subtitle {
+        font-size: 12px;
+    }
+
+    .complaints-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 10px;
+        padding: 8px;
+    }
+
+    .complaint-card {
+        min-height: 160px;
+        height: auto;
+        padding: 12px 8px;
+        padding-top: 12px;
+        padding-bottom: 10px;
+    }
+
+    .icon-container {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 8px;
+    }
+
+    .complaint-label {
+        font-size: 12px;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .complaint-card:hover {
+        transform: none;
+    }
+
+    .complaint-card:active {
+        transform: scale(0.95);
+    }
+
+    .complaint-card:hover .complaint-icon-img {
+        transform: none;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .complaint-card,
+    .complaint-icon-img {
+        transition: none;
+    }
+
+    .complaint-card:hover {
+        transform: none;
+    }
+
+    .complaint-card:hover .complaint-icon-img {
+        transform: none;
+    }
+}

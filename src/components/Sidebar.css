@@ -1,0 +1,294 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 140px;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+    gap: 20px;
+    z-index: 999;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sidebar-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    width: 100%;
+    padding: 10px;
+    border-radius: 14px;
+    box-sizing: border-box;
+}
+
+.sidebar-icon:hover {
+    transform: scale(1.1);
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-icon:active {
+    transform: scale(0.95);
+}
+
+.sidebar-icon.active {
+    background: rgba(11, 29, 51, 0.1);
+}
+
+.sidebar-icon.active .sidebar-icon-wrapper {
+    border: 2px solid #0b1d33;
+}
+
+.sidebar-icon-wrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    overflow: hidden;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.sidebar-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.sidebar-icon-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #11181C;
+    text-align: center;
+    margin-top: 8px;
+    line-height: 1.3;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+.ad-icon-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0b1d33;
+    background: rgba(11, 29, 51, 0.1);
+    border-radius: 14px;
+}
+
+.ad-icon .sidebar-icon-wrapper {
+    background: rgba(11, 29, 51, 0.15);
+}
+
+.ad-icon:hover .sidebar-icon-wrapper {
+    background: rgba(11, 29, 51, 0.25);
+    transform: scale(1.05);
+}
+
+.ad-icon.active .sidebar-icon-wrapper {
+    background: rgba(11, 29, 51, 0.2);
+    border: 2px solid #0b1d33;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - SIDEBAR
+   ============================================ */
+
+/* Extra Small Devices (< 360px) - Mobile Small */
+@media (max-width: 359px) {
+    .sidebar {
+        width: 90px;
+        padding: 12px 6px;
+        gap: 14px;
+    }
+
+    .sidebar-icon-wrapper {
+        width: 70px;
+        height: 70px;
+    }
+
+    .sidebar-icon-label {
+        font-size: 11px;
+        margin-top: 5px;
+    }
+
+    .sidebar-icon {
+        padding: 6px;
+    }
+}
+
+/* Small Devices (360px - 480px) - Mobile Large */
+@media (min-width: 360px) and (max-width: 480px) {
+    .sidebar {
+        width: 100px;
+        padding: 14px 7px;
+        gap: 16px;
+    }
+
+    .sidebar-icon-wrapper {
+        width: 78px;
+        height: 78px;
+    }
+
+    .sidebar-icon-label {
+        font-size: 12px;
+        margin-top: 6px;
+    }
+
+    .sidebar-icon {
+        padding: 7px;
+    }
+}
+
+/* Tablet Portrait (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .sidebar {
+        width: 115px;
+        padding: 16px 8px;
+        gap: 18px;
+    }
+
+    .sidebar-icon-wrapper {
+        width: 88px;
+        height: 88px;
+    }
+
+    .sidebar-icon-label {
+        font-size: 13px;
+        margin-top: 7px;
+    }
+
+    .sidebar-icon {
+        padding: 8px;
+    }
+}
+
+/* Tablet Landscape (769px - 1023px) */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .sidebar {
+        width: 125px;
+        padding: 18px 9px;
+        gap: 18px;
+    }
+
+    .sidebar-icon-wrapper {
+        width: 92px;
+        height: 92px;
+    }
+
+    .sidebar-icon-label {
+        font-size: 14px;
+        margin-top: 7px;
+    }
+
+    .sidebar-icon {
+        padding: 9px;
+    }
+}
+
+/* Desktop (1024px and above) */
+@media (min-width: 1024px) {
+    .sidebar {
+        width: 140px;
+        padding: 20px 10px;
+        gap: 20px;
+    }
+
+    .sidebar-icon-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+
+    .sidebar-icon-label {
+        font-size: 15px;
+        margin-top: 8px;
+    }
+}
+
+/* Landscape Orientation - Small Screens */
+@media (orientation: landscape) and (max-height: 600px) {
+    .sidebar {
+        width: 100px;
+        padding: 12px 6px;
+        gap: 12px;
+    }
+
+    .sidebar-icon-wrapper {
+        width: 75px;
+        height: 75px;
+    }
+
+    .sidebar-icon-label {
+        font-size: 11px;
+        margin-top: 5px;
+    }
+
+    .sidebar-icon {
+        padding: 6px;
+    }
+}
+
+/* Very Large Screens (1440px and above) */
+@media (min-width: 1440px) {
+    .sidebar {
+        width: 150px;
+        padding: 24px 12px;
+        gap: 24px;
+    }
+
+    .sidebar-icon-wrapper {
+        width: 110px;
+        height: 110px;
+    }
+
+    .sidebar-icon-label {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .sidebar-icon {
+        padding: 12px;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .sidebar-icon:hover {
+        transform: none;
+        background: transparent;
+    }
+
+    .sidebar-icon:active {
+        transform: scale(0.9);
+        background: rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .sidebar-icon {
+        transition: none;
+    }
+
+    .sidebar-icon:hover {
+        transform: none;
+    }
+}

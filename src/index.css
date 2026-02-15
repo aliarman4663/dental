@@ -1,0 +1,148 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: #11181C;
+  background-color: #eaeaa2;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  /* Prevent body scroll */
+  background-color: #eaeaa2;
+  color: #11181C;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-shell {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow-y: auto;
+  /* Allow scrolling inside the page content if needed */
+  background-image:
+    radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(225, 39%, 30%, 0.05) 0px, transparent 50%);
+  margin-left: 140px;
+  box-sizing: border-box;
+}
+
+/* Desktop (1024px and above) - Full sidebar */
+@media (min-width: 1024px) {
+  .app-shell {
+    margin-left: 140px;
+  }
+}
+
+/* Very Large Screens (1440px and above) */
+@media (min-width: 1440px) {
+  .app-shell {
+    margin-left: 150px;
+  }
+}
+
+/* Tablet Landscape (769px - 1023px) */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .app-shell {
+    margin-left: 125px;
+  }
+}
+
+/* Tablet Portrait (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .app-shell {
+    margin-left: 115px;
+  }
+}
+
+/* Mobile Large (360px - 480px) */
+@media (min-width: 360px) and (max-width: 480px) {
+  .app-shell {
+    margin-left: 100px;
+  }
+}
+
+/* Mobile Small (< 360px) */
+@media (max-width: 359px) {
+  .app-shell {
+    margin-left: 90px;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Touch-friendly scrollbar on mobile */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
+/* Prevent text selection on mobile for better UX */
+@media (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+  
+  button, a {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+/* Light theme - always use light colors */
+:root {
+  color: #11181C;
+  background-color: #eaeaa2;
+}
+
+body {
+  background-color: #eaeaa2;
+  color: #11181C;
+}
+
+/* Ensure full height */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Utility */
+/* Animations handled by Framer Motion in Layout.tsx */
